@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>    
+    <id>Xo.TaskFlow</id>
+    <version>1.0.0.0</version>
+    <title>Xo.TaskFlow</title>
+    <authors>Simon Stipcich</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description></description>
+    <tags></tags>
+    <summary></summary>
+  </metadata>
+  <files>
+    <file src="..\tmp\net6.0\application\Xo.TaskFlow.dll" target="lib\net6.0"/>
+  </files>
+</package>

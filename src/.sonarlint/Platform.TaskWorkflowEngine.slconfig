@@ -1,0 +1,12 @@
+{
+  "ServerUri": "http://der2601.mgsops.net:9000/sonarqube/",
+  "Organization": null,
+  "ProjectKey": "Platform-TaskWorkflowEngine",
+  "ProjectName": "Platform-TaskWorkflowEngine",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AXXQX3Ss0YgC3lELRYLa",
+      "ProfileTimestamp": "2022-08-30T06:43:33Z"
+    }
+  }
+}
