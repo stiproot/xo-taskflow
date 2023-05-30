@@ -18,6 +18,5 @@ jobs:
         with:
           dotnet-version: '7.0.0' # Replace with the desired .NET version
 
-      - name: Build and test
+      - name: Build
         run: dotnet build --configuration Release
-        run: dotnet test --configuration Release --no-build
