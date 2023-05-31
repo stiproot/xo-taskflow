@@ -18,6 +18,12 @@ jobs:
         with:
           dotnet-version: '7.0.203'
 
+      - name: Read version from file
+        id: read-version
+        run: |
+          $version = Get-Content version.txt
+          echo "::set-output name=version::$version"
+
       - name: Build
         run: dotnet build src/ --configuration Release
         
@@ -25,7 +31,9 @@ jobs:
         run: dotnet test src/ --configuration Release --no-build
         
       - name: Pkg
-        run: dotnet pack --configuration Release --no-build --no-restore --include-source --include-symbols --output nupkg ./src/Xo.TaskFlow/Xo.Taskflow.csproj
+        run: dotnet pack --configuration Release --no-build --no-restore --include-source --include-symbols --output nupkg --version-suffix ${{ steps.read-version.outputs.version }} ./src/ 
+        #run: dotnet pack --configuration Release --no-build --no-restore --include-source --include-symbols --output nupkg ./src/Xo.TaskFlow/Xo.Taskflow.csproj
         
       - name: Publish NuGet package
-        run: dotnet nuget push ./nupkg/Xo.Taskflow.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_XO }}
+        run: dotnet nuget push ./nupkg/ --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_XO }}
+
