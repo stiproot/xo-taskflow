@@ -23,6 +23,6 @@ public class Startup
 		services.AddTransient<IY_InStr_OutConstInt_AsyncService, Y_InStr_OutConstInt_AsyncService>();
 		services.AddTransient<IY_InBoolStr_OutConstInt_AsyncService, Y_InBoolStr_OutConstInt_AsyncService>();
 
-		services.AddTaskWorkflowEngineServices();
+		services.AddTaskFlowServices();
 	}
 }

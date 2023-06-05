@@ -1,5 +1,3 @@
-using Xo.TaskFlow.Abstractions;
-using Xo.TaskFlow.Core;
 using Xo.TaskFlow.Factories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -9,13 +7,13 @@ namespace Xo.TaskFlow.DependencyInjection.Extensions;
 /// <summary>
 ///   <see cref="IServiceCollection"/> extension methods.
 /// </summary>
-public static class IServiceCollectionExtensions
+public static class ServiceCollectionExtensions
 {
 	/// <summary>
 	///   Add all Xo.TaskFlow services to <see cref="IServiceCollection"/>.
 	/// </summary>
 	/// <returns><see cref="IServiceCollection"/></returns>
-	public static IServiceCollection AddTaskWorkflowEngineServices(this IServiceCollection services)
+	public static IServiceCollection AddTaskFlowServices(this IServiceCollection services)
 	{
 		services.TryAddSingleton<IFunctitect, Functitect>();
 		services.TryAddSingleton<INodeBuilderFactory, NodeBuilderFactory>();
